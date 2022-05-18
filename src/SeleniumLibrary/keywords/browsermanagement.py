@@ -488,6 +488,11 @@ class BrowserManagementKeywords(LibraryComponent):
     def get_source(self) -> str:
         """Returns the entire HTML source of the current page or frame."""
         return self.driver.page_source
+    
+    @keyword
+    def get_logs(self, log_type: str = "browser") -> str:
+        """Returns the browser selected logs."""
+        return self.driver.get_log(log_type)
 
     @keyword
     def get_title(self) -> str:
